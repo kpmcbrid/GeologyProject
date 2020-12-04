@@ -46,17 +46,15 @@
         <script type="text/javascript">
 
           var map = L.map('map', {
-              center: [27.798492,-82.7640622],
-              zoom: 7.25
+            center: [28.1648, -83.5158],
+          zoomSnap: 0.1,
+          zoom: 7.3
+
           });
 
-          L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-              attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-              maxZoom: 11,
-	  minZoom: 5,
-              id: 'mapbox.satellite',
-              accessToken: 'pk.eyJ1Ijoia3BtY2JyaWQiLCJhIjoiY2tlbmY2ejJjMGlrbzMzbnEzeXl6aTN5YyJ9.EkN3hLwXi3t-1aRzszfplQ'
-          }).addTo(map);
+          L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            }).addTo(map);
 
 
         function getColor(value) {
