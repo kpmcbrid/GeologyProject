@@ -46,7 +46,7 @@
         <script type="text/javascript">
 
           var map = L.map('map', {
-            center: [28.1648, -83.5158],
+            center: [27.798492,-82.7640622],
           zoomSnap: 0.1,
           zoom: 7.3
 
@@ -141,6 +141,25 @@
                     '<i style="background:' + getColor(grades[i] ) + '"></i>' +
                     grades[i] + '<br>';
                 }
+
+                var FossilIcon = L.icon({
+          iconUrl: 'FossilIcon.ico', // url that links to the icon image file
+          iconSize:     [30, 30], // size of the icon image in pixels
+          iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+          popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+        });
+
+        var marker1Honeymoon = L.marker([28.0641,-82.8297], {icon: FossilIcon}).addTo(map);
+        var marker2Jacksonville = L.marker([30.2841,-81.3961], {icon: FossilIcon}).addTo(map);
+        var marker3Venice = L.marker([27.1001,-82.4576], {icon: FossilIcon}).addTo(map);
+        var marker4Peace = L.marker([26.9173,-82.1426], {icon: FossilIcon}).addTo(map);
+        var marker5Gardner = L.marker([27.3464,-81.8261], {icon: FossilIcon}).addTo(map);
+
+        marker1Honeymoon.bindPopup("<center><b>Honeymoon Island State Park</b> <br> One of the few places where agatized coral can be found. This type of fossil is much more rare and is hard to find.");
+        marker2Jacksonville.bindPopup("<center><b>Jacksonville Beach</b> <br> Fossils can be found along the beach. Shark teeth are common and there is a chance to find horse and giant ground sloth fossils.");
+        marker3Venice.bindPopup("<center><b>Venice Beach</b> <br> Many types of fossils can be found here, this area is known as a 'pleistocene graveyard'. Whale, alligator, or tortoise fossils are just a few examples of fossils you can find.");
+        marker4Peace.bindPopup("<center><b>Peace River</b> <br> During winter months, the river becomes clear and shallow allowing for fossil hunting. Beware of alligators in the river.");
+        marker5Gardner.bindPopup("<center><b>Gardener Boat Ramp</b> <br> This boat ramp on the Peace river but is more inland than the other fossil local. This area offers good fossil hunting along the shores. Beware of alligators.");
 
                 return div;
             };
